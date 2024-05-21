@@ -1,0 +1,41 @@
+
+
+
+
+.container {  
+  display: grid;
+  display: grid; 
+  grid-template-columns: 4.2fr 5.6fr; 
+  grid-template-rows: 0.6fr 3.8fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Header Header"
+    "clicker store"; 
+    height: 100vh;
+  }
+  
+  .Header { grid-area: Header; 
+             background-color: rgb(215, 246, 41);}
+  
+  .store { grid-area: store;
+        background-color: rgb(177, 128, 144);
+        text-align: center; }  
+  
+  .clicker { grid-area: clicker;
+             background-color: lightpink;
+             text-align: center; }
+
+
+             .border-box {
+              border: 2px solid yellow;
+              background-color: yellow;
+              padding: 10px;
+              margin: 10px;
+              text-align: center;
+              width: 100px;
+              color: black;  
+              border-radius: 50%;
+              text-align: center;
+          } 
+          
+  
