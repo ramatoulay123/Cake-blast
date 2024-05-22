@@ -15,10 +15,10 @@
   }
   
   .Header { grid-area: Header; 
-             background-color: rgb(215, 246, 41);}
+             background-color: rgb(247, 247, 245);}
   
   .store { grid-area: store;
-        background-color: rgb(177, 128, 144);
+        background-color: #c0f25c;
         text-align: center; }  
   
   .clicker { grid-area: clicker;
@@ -29,13 +29,12 @@
              .border-box {
               border: 2px solid yellow;
               background-color: yellow;
-              padding: 10px;
-              margin: 10px;
-              text-align: center;
-              width: 100px;
               color: black;  
               border-radius: 50%;
-              text-align: center;
+              margin: 0 auto;
+              padding: 30px;
+              width: 200px;
+              cursor: pointer; 
           } 
           
   

@@ -14,13 +14,85 @@
 
     <script> 
        let points = 0
-
-
+       let flour = 0 
+       let flourAmount = document.getElementById("flourAmount")
        function increasePoints () {
         points = points + 1
+       let egg = 0 
+       let eggAmount = document.getElementById("eggAmount")
+       let butter = 0 
+       let butterAmount = document.getElementById("butterAmount")
+       let sugar = 0 
+       let sugarAmount = document.getElementById("sugarAmount")  
 
-        pointsTracker.innerText = points + "Birthday Cake"
+        pointsTracker.innerText = points +  " Birthday Cake"
        }
+
+       function showAlert(ingredient) {
+            alert("You clicked on " + ingredient + "!");
+        } 
+
+
+        function buyFlour () { 
+            if (points >= 40) { 
+                points = points - 40
+                pointsTracker.innerText = points + " Birthday Cake"
+                flour = flour + 1 
+                flourAmount.innerText = flour + "flourAmount"
+            } else { 
+                alert("you need more cake")
+            }
+        } 
+
+        function buyEgg () {    
+            if (points >= 120) {    
+                points = points - 120 
+                pointsTracker.innerText = points + " Birthday Cake"
+                egg = egg + 1
+                eggAmount.innerText = egg + "eggAmount"   
+            }   else { 
+                 alert("you need more cake")
+
+            } 
+        }
+
+        function buyButter () {
+            if (points >= 140) {
+                points = points - 140 
+                pointsTracker.innerText = points + " Birthday Cake"
+                butter = butter + 1 
+                butterAmount.innerText = butter + "ButterAmount" 
+            }
+            else { 
+                alert("you need more cake")
+            }
+        }
+        
+        function buySugar () { 
+            if (points >= 170) { 
+                points = points - 170 
+                pointsTracker.innerText = points + " Birthday Cake"
+                sugar = sugar + 1 
+                sugarAmount.innerText = sugar + "sugarAmount"
+            } else { 
+                alert ("you need more cake")
+            }
+        }
+
+        function buyBaking () {
+            if (points >= 200) {
+                points = points - 200 
+                pointsTracker.innerText = points + " Birthday Cake"
+                baking = baking + 1 
+                bakingAmount.innerText = baking + "bakingAmount"   
+            }  else { 
+                alert("You need more cake")
+            }
+        }
+
+    
+               
+        
     </script>
    
 
@@ -42,19 +114,26 @@
         <div class="store">
             <h1> Store </h1>
         <br> <br> <br> 
-        <div class="border-box"> 👨🏾‍🍳flour</div>
-        <br> 
-        <div class="border-box"> 🥚eggs</div>
-        <br> 
-        <div class="border-box"> 🧈Butter</div>
-        <br> 
-        <div class="border-box"> 🍭sugar</div>
-        <br>
-        <div class="border-box">⏲baking soda</div>
-    
-        </div>
-    
-      </div>
+<button onclick="buyFlour ()"> 
+ <div class="border-box">👨🏾‍🍳flour</div>
+ </button>
+<br> <br>
+<button onclick="buyEgg ()"> 
+<div class="border-box">🥚eggs</div>
+</button>
+<br> <br> 
+<button onclick="buyButter ()"> 
+<div class="border-box">🧈Butter</div>
+</button>
+<br> <br> 
+<button onclick="buySugar ()"> 
+<div class="border-box">🍭sugar</div>
+</button>
+<br> <br> 
+<button> 
+<div class="border-box">⏲baking soda</div>
+</button>
     <script src="game.js"></script>
+        </div> </div>
 </body>
 </html>
