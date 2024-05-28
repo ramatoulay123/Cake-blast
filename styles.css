@@ -15,20 +15,30 @@
   }
   
   .Header { grid-area: Header; 
-             background-color: rgb(247, 247, 245);}
+             background-color: rgb(247, 247, 245);
+             font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            }
   
   .store { grid-area: store;
-        background-color: #c0f25c;
-        text-align: center; }  
+        background-color: #e2d586;
+        text-align: center;
+        font-family: "Lobster", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center; }  
   
   .clicker { grid-area: clicker;
-             background-color: lightpink;
-             text-align: center; }
+             background-color: rgb(240, 168, 213);
+             text-align: center;
+              }
 
 
              .border-box {
-              border: 2px solid yellow;
-              background-color: yellow;
+              border: 2px solid rgb(50, 49, 19);
+              background-color: rgb(237, 237, 31);
               color: black;  
               border-radius: 50%;
               margin: 0 auto;
@@ -36,5 +46,6 @@
               width: 200px;
               cursor: pointer; 
           } 
+    
           
   
