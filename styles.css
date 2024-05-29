@@ -15,7 +15,7 @@
   }
   
   .Header { grid-area: Header; 
-             background-color: rgb(247, 247, 245);
+             background-color: 255, 232, 209;
              font-family: "Lobster", sans-serif;
             font-weight: 400;
             font-style: normal;
@@ -23,7 +23,7 @@
             }
   
   .store { grid-area: store;
-        background-color: #e2d586;
+        background-color: rgb(241, 160, 233);
         text-align: center;
         font-family: "Lobster", sans-serif;
             font-weight: 400;
@@ -31,7 +31,7 @@
             text-align: center; }  
   
   .clicker { grid-area: clicker;
-             background-color: rgb(240, 168, 213);
+             background-color:rgb(241, 160, 233); 
              text-align: center;
               }
 

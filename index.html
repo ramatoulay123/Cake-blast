@@ -39,7 +39,7 @@
                     <h2 id="flourAmount"></h2>
                     <div class="border-box"> 
                     <img src="images/flourimage.png" alt="An image of a flour"  width="50" height="50">  
-                    
+                    cost:<span id="flourCost"> 40</span> 
                     </div> 
                 </button>
             </div>
@@ -48,6 +48,7 @@
                 <h2 id="eggAmount"></h2>
                 <div class="border-box">
                     <img src="images/eggimage.png" alt="an image of an egg" width="50" height="50"> 
+                    cost:<span id="eggCost"> 60</span> 
                 </div>
             </button>
             <br> <br>
@@ -55,6 +56,8 @@
                 <h2 id="butterAmount"></h2>
                 <div class="border-box">
                     <img src="images/butterimage.png" alt="A picture of a butter" width="50" height="50"> 
+
+                    cost:<span id="butterCost"> 80</span>
                 </div>
             </button>
             <br> <br>
@@ -62,6 +65,7 @@
                 <h2 id="sugarAmount"></h2>
                 <div class="border-box">
                     <img src="images/sugarimage.png" alt="A picture of a sugar" width="50" height="50"> 
+                    cost:<span id="sugarCost"> 100</span>
                 </div>
             </button>
             <br> <br>
@@ -69,17 +73,19 @@
                 <h2 id="bakingAmount"></h2>
                 <div class="border-box">
                     <img src="images/bakingimage.png" alt="A picture of baking soda" width="50" height="50"> 
+                    cost:<span id="bakingCost"> 120</span>
                 </div>
             </button>
             <script src="game.js"></script>
         </div>
     </div>
     <script>
-
+      
         let points = 0
         let flour = 0
 
         let flourAmount = document.getElementById("flourAmount")
+
         let pointsTracker = document.getElementById("pointsTracker")
 
 
@@ -89,9 +95,21 @@
         let butterAmount = document.getElementById("butterAmount")
         let sugar = 0
         let sugarAmount = document.getElementById("sugarAmount")
+
         let baking = 0
+
         let bakingAmount = document.getElementById("bakingAmount")
 
+        let flourCost = document.getElementById("flourCost") 
+
+        let eggCost = document.getElementById("eggCost")
+
+        let butterCost = document.getElementById("butterCost")
+
+        let sugarCost = document.getElementById("sugarCost")
+
+        let bakingCost = document.getElementById("bakingCost")
+        
         function increasePoints() {
             points = points + 1
             pointsTracker.innerText = points + " Birthday Cake"
@@ -103,22 +121,29 @@
 
 
         function buyFlour() {
-            if (points >= 40) {
+            let cost = 40 + flour ** 2 
+            if (points >= cost) {       
                 points = points - 40
                 pointsTracker.innerText = points + " Birthday Cake"
                 flour = flour + 1
                 flourAmount.innerText = flour + "flourAmount"
+
+                flourCost.innerText = 40 + flour **2 
             } else {
+
                 alert("you need more cake")
             }
         }
 
         function buyEgg() {
-            if (points >= 60) {
+            let cost = 60 + egg ** 2  
+            if (points >= cost) {
                 points = points - 60
                 pointsTracker.innerText = points + " Birthday Cake"
                 egg = egg + 1
                 eggAmount.innerText = egg + "eggAmount"
+
+                eggCost.innerText = 60 + egg ** 2 
             } else {
                 alert("you need more cake")
 
@@ -126,11 +151,15 @@
         }
 
         function buyButter() {
-            if (points >= 80) {
+            let cost = 80 + butter ** 3 
+            if (points >= cost) {
                 points = points - 80
                 pointsTracker.innerText = points + " Birthday Cake"
                 butter = butter + 1
+
                 butterAmount.innerText = butter + "ButterAmount"
+
+                butterCost.innerText = 80 + butter ** 3 
             }
             else {
                 alert("you need more cake")
@@ -138,22 +167,27 @@
         }
 
         function buySugar() {
-            if (points >= 100) {
+            let cost = 100 + sugar ** 3 
+            if (points >= cost) {
                 points = points - 100
                 pointsTracker.innerText = points + " Birthday Cake"
                 sugar = sugar + 1
                 sugarAmount.innerText = sugar + "sugarAmount"
+                sugarCost.innerText = 100 + sugar ** 3 
             } else {
                 alert("you need more cake")
             }
         }
 
         function buyBaking() {
-            if (points >= 120) {
+            let cost = 120 + baking ** 3 
+            if (points >= cost) {
                 points = points - 120
                 pointsTracker.innerText = points + " Birthday Cake"
                 baking = baking + 1
                 bakingAmount.innerText = baking + "bakingAmount"
+
+                bakingCost.innerText = 120 + baking ** 3 
 
             } else {
                 alert("You need more cake")
