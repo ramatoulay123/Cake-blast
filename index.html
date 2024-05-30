@@ -24,8 +24,9 @@
             <br>
             <br>
             <br>
-            <br> <br> <br>
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
             <button onclick="increasePoints()">
+               
                 <img src="images/clicker.jpg" alt="birthday cake" height="400" width="400" class="center">
             </button>
         </div>
@@ -35,7 +36,7 @@
 
             <div>
                 <h3></h3>
-                <button onclick="buyFlour()">
+                <button id="myBtn"  onclick="buyFlour()"> 
                     <h2 id="flourAmount"></h2>
                     <div class="border-box"> 
                     <img src="images/flourimage.png" alt="An image of a flour"  width="50" height="50">  
@@ -44,7 +45,7 @@
                 </button>
             </div>
             <br> <br>
-            <button onclick="buyEgg()">
+            <button id="myBt" onclick="buyEgg()">
                 <h2 id="eggAmount"></h2>
                 <div class="border-box">
                     <img src="images/eggimage.png" alt="an image of an egg" width="50" height="50"> 
@@ -61,7 +62,7 @@
                 </div>
             </button>
             <br> <br>
-            <button onclick="buySugar()">
+            <button  onclick="buySugar()">
                 <h2 id="sugarAmount"></h2>
                 <div class="border-box">
                     <img src="images/sugarimage.png" alt="A picture of a sugar" width="50" height="50"> 
@@ -109,6 +110,11 @@
         let sugarCost = document.getElementById("sugarCost")
 
         let bakingCost = document.getElementById("bakingCost")
+
+        let  flourButton = document.getElementById("myBtn"); 
+
+        let eggButton = document.getElementById("myBt"); 
+
         
         function increasePoints() {
             points = points + 1
@@ -194,44 +200,39 @@
             }
         }
 
+        
+
 
         function gameLoop() {
-            points = points + (1 * flour);
+            points = points + (1 * flour) + (3 * egg) +   (4 * butter) +  (5 * sugar) + (8 * baking) 
             pointsTracker.innerText = points.toFixed(2) + " Birthday Cake"
+
+            if (40 + flour ** 2 > points) {
+                flourButton.disabled = true; 
+            } else {
+                flourButton.disabled = false; 
+            }
         }
+
+          if (60 + egg ** 2  > points ) { 
+            eggButton.disabled = true; 
+          } else { 
+            eggButton.disabled = false
+
+          }
 
         setInterval(gameLoop, 1000);
 
-        function gameLoop2() {  
-            points = points + (3 * egg); 
-            pointsTracker.innerText = points.toFixed(2) + " Birthday Cake"
-            
-        }
-        setInterval(gameLoop2, 1000) 
+        
 
 
-        function gameLoop3() { 
-            points = points + (4 * butter); 
-            pointsTracker.innerText = points.toFixed(2) + " Birthday Cake"
-
-        }
-        setInterval(gameLoop3, 1000 )
+       
 
 
-        function gameLoop4() { 
-            points = points + (5 * sugar); 
-            pointsTracker.innerText = points.toFixed(2) + " Birthday Cake"
-        }
-
-        setInterval(gameLoop4, 1000)
+        
 
 
-        function gameLoop5() { 
-            points = points + (8* baking); 
-            pointsTracker.innerText = points.toFixed(2) + " Birthday Cake"
-        }
-
-        setInterval(gameLoop5, 1000)
+      
 
 
 
