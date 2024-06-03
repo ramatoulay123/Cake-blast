@@ -53,7 +53,7 @@
                 </div>
             </button>
             <br> <br>
-            <button onclick="buyButter()">
+            <button id="myBtn3" onclick="buyButter()">
                 <h2 id="butterAmount"></h2>
                 <div class="border-box">
                     <img src="images/butterimage.png" alt="A picture of a butter" width="50" height="50"> 
@@ -62,7 +62,7 @@
                 </div>
             </button>
             <br> <br>
-            <button  onclick="buySugar()">
+            <button id="myBtn4" onclick="buySugar()">
                 <h2 id="sugarAmount"></h2>
                 <div class="border-box">
                     <img src="images/sugarimage.png" alt="A picture of a sugar" width="50" height="50"> 
@@ -70,17 +70,56 @@
                 </div>
             </button>
             <br> <br>
-            <button onclick="buyBaking()">
+            <button id="myBtn5" onclick="buyBaking()">
                 <h2 id="bakingAmount"></h2>
                 <div class="border-box">
                     <img src="images/bakingimage.png" alt="A picture of baking soda" width="50" height="50"> 
                     cost:<span id="bakingCost"> 120</span>
                 </div>
             </button>
+        <br> <br> <br> <br> 
+
+        <button onclick="muteMusic()"> mute music</button> 
+
+        
+
+
             <script src="game.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
         </div>
     </div>
+
+    
+
+    
     <script>
+
+        let bgMusic = new Howl( { 
+            src: ["cakeaudio.mp3"], 
+            autoplay: true, 
+            volume: .15,
+            loop: true
+        })
+
+        function muteMusic () { 
+            bgMusic.pause() 
+        }
+
+        let soundMusic = new Howl( { 
+            src: ["coin2.wav"], 
+            autoplay: false,
+            volume: .10,  
+            loop: false 
+
+        }) 
+
+        let soundMusic1 = new Howl( { 
+            src: ["random3.wav"],  
+            autoplay: false,   
+            volume: .10,
+            loop: false 
+        }
+        )
       
         let points = 0
         let flour = 0
@@ -115,8 +154,17 @@
 
         let eggButton = document.getElementById("myBt"); 
 
+        let butterButton = document.getElementById("myBtn3")
+
+        let sugarButton = document.getElementById("myBtn4")
+
+        let bakingButton = document.getElementById("myBtn5")
+
+
+
         
         function increasePoints() {
+            soundMusic1.play() 
             points = points + 1
             pointsTracker.innerText = points + " Birthday Cake"
         }
@@ -127,6 +175,7 @@
 
 
         function buyFlour() {
+            soundMusic.play() 
             let cost = 40 + flour ** 2 
             if (points >= cost) {       
                 points = points - 40
@@ -142,6 +191,7 @@
         }
 
         function buyEgg() {
+            soundMusic.play() 
             let cost = 60 + egg ** 2  
             if (points >= cost) {
                 points = points - 60
@@ -157,6 +207,7 @@
         }
 
         function buyButter() {
+            soundMusic.play()
             let cost = 80 + butter ** 3 
             if (points >= cost) {
                 points = points - 80
@@ -173,6 +224,7 @@
         }
 
         function buySugar() {
+            soundMusic.play() 
             let cost = 100 + sugar ** 3 
             if (points >= cost) {
                 points = points - 100
@@ -186,6 +238,7 @@
         }
 
         function buyBaking() {
+            soundMusic.play() 
             let cost = 120 + baking ** 3 
             if (points >= cost) {
                 points = points - 120
@@ -212,14 +265,34 @@
             } else {
                 flourButton.disabled = false; 
             }
-        }
 
-          if (60 + egg ** 2  > points ) { 
+            if (60 + egg ** 2  > points ) { 
             eggButton.disabled = true; 
           } else { 
             eggButton.disabled = false
 
           }
+          if ( 80 + butter ** 3 > points) { 
+             butterButton.disabled = true;  
+          } else { 
+             butterButton.disabled = false; 
+          }
+
+          if (100 + sugar ** 3 > points) { 
+            sugarButton.disabled = true; 
+          } else { 
+            sugarButton.disabled = false;
+          }
+
+          if (120 + baking ** 3 > points ) { 
+            bakingButton.disabled = true;  
+          } else {
+            bakingButton.disabled = false;    
+          }    
+
+        }     
+
+
 
         setInterval(gameLoop, 1000);
 
