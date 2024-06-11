@@ -11,20 +11,13 @@
 
     
 
-    <script>
-        var wow = new WOW({
-            boxClass:     'wow',
-            animateClass: 'animate__animated'
-        })
-        wow.init(); 
-</script>  
+   
 
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   /> 
-
-
+  
 </head> 
 
 
@@ -34,16 +27,18 @@
 
     <div class="container">
         <div class="Header">
+        <div class="animate__animated animate__shakeX"> 
             <h1> Cake-Blast</h1>
         </div>
+        </div> 
         <div class="clicker">
             <h1 id="pointsTracker">Birthday cake</h1>
             <br>
             <br>
-            <br>
+            <br> 
             <br>
             <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
-            <div class="wow animate__bounce">
+            <div class="animate__animated animate__bounce">
             <button class="button" onclick="increasePoints()">
             
             <img src="images/clicker.jpg" alt="birthday cake" height="400" width="400" class="center">
@@ -55,11 +50,16 @@
        
         <div class="store">
             <h1> Store </h1>
+            <button onclick="muteMusic()"> mute music</button> 
+
+        
+
             <br> <br> 
 
             <div>
+                
                 <h3></h3>
-                <div class="wow animate__fadeIn"> 
+                <div class="animate__animated animate__fadeIn"> 
                 <button id="myBtn"  onclick="buyFlour()"> 
                     <h2 id="flourAmount"></h2>
                     <div class="border-box"> 
@@ -69,7 +69,7 @@
                 </button>
             </div>
             <br> <br>
-            <div class="wow animate__fadeIn"> 
+            <div class="animate__animated animate__fadeIn"> 
             <button id="myBt" onclick="buyEgg()">
                 <h2 id="eggAmount"></h2>
                 <div class="border-box">
@@ -79,7 +79,7 @@
             </button>
             </div> 
             <br> <br>
-            <div class="wow animate__fadeIn"> 
+            <div class="animate__animated animate__fadeIn"> 
             <button id="myBtn3" onclick="buyButter()">
                 <h2 id="butterAmount"></h2>
                 <div class="border-box">
@@ -90,7 +90,7 @@
             </button>
             </div>
             <br> <br>
-            <div class="wow animate__fadeIn">
+            <div class="animate__animated animate__fadeIn">
             <button id="myBtn4" onclick="buySugar()">
                 <h2 id="sugarAmount"></h2>
                 <div class="border-box">
@@ -100,7 +100,7 @@
             </button>
             </div>
             <br> <br>
-            <div class="wow animate__fadeIn"> 
+            <div class="animate__animated animate__fadeIn"> 
             <button id="myBtn5" onclick="buyBaking()">
                 <h2 id="bakingAmount"></h2>
                 <div class="border-box">
@@ -112,8 +112,8 @@
             </div>
             </div> 
         <br> <br> <br> <br> 
-
-        <button onclick="muteMusic()"> mute music</button> 
+        
+        
 
         
 
@@ -218,11 +218,9 @@
                 flourAmount.innerText = flour + "flourAmount"
 
                 flourCost.innerText = 40 + flour **2 
-            } else {
-
-                alert("you need more cake")
-            }
-        }
+            } 
+           
+        } 
 
         function buyEgg() {
             soundMusic.play() 
@@ -234,10 +232,8 @@
                 eggAmount.innerText = egg + "eggAmount"
 
                 eggCost.innerText = 60 + egg ** 2 
-            } else {
-                alert("you need more cake")
-
-            }
+            } 
+            
         }
 
         function buyButter() {
@@ -252,9 +248,8 @@
 
                 butterCost.innerText = 80 + butter ** 3 
             }
-            else {
-                alert("you need more cake")
-            }
+            
+            
         }
 
         function buySugar() {
@@ -266,9 +261,8 @@
                 sugar = sugar + 1
                 sugarAmount.innerText = sugar + "sugarAmount"
                 sugarCost.innerText = 100 + sugar ** 3 
-            } else {
-                alert("you need more cake")
-            }
+            } 
+            
         }
 
         function buyBaking() {
@@ -282,10 +276,9 @@
 
                 bakingCost.innerText = 120 + baking ** 3 
 
-            } else {
-                alert("You need more cake")
-            }
-        }
+            } 
+            
+        } 
 
         
 
